@@ -1,0 +1,19 @@
+--duplicates
+SELECT title, release_year, language_id, rental_duration, COUNT(*)
+FROM film
+GROUP BY title, release_year, language_id, rental_duration
+HAVING COUNT(*) >1;
+--if found, remove
+
+--uniformity
+SELECT DISTINCT --list all columns
+FROM film
+--if non-uniformity is found, UPDATE
+
+
+--missing values
+SELECT DISTINCT customer_id, store_id, first_name, last_name, email, address_id, activebool, create_date, last_update, active, 
+COUNT (*)
+FROM customer
+GROUP BY customer_id, store_id, first_name, last_name, email, address_id, activebool, create_date, last_update, active
+HAVING COUNT(*) >1 OR COUNT(*) = (null)
