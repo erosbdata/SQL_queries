@@ -1,0 +1,12 @@
+-- get title, year, rate
+SELECT title, release_year, rental_rate
+FROM film
+ORDER BY title, release_year DESC, rental_rate DESC
+
+
+-- rental rate by rating statistics
+SELECT rating, AVG(rental_rate) -- replace AVG with MAX or MIN as well
+FROM film
+GROUP BY rating
+
+
